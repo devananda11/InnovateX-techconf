@@ -1,43 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import Count from './Count';
 
-const Countdown = ({ targetDate }) => {
-    const calculateTimeLeft = () => {
-        const difference = +new Date(targetDate) - +new Date();
-        let timeLeft = {};
-        if (difference > 0) {
-            timeLeft = {
-                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-                minutes: Math.floor((difference / 1000 / 60) % 60),
-                seconds: Math.floor((difference / 1000) % 60)
-            };
-        }
-        return timeLeft;
+export default function Countdown() {
+
+  const initTimeLeft = () => {
+    const year = new Date().getFullYear();
+    const countTime = +new Date(`09/30/${year}`) - +new Date();
+    return {
+      days: Math.floor(countTime / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((countTime / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((countTime / 1000 / 60) % 60),
+      seconds: Math.floor((countTime / 1000) % 60)
     };
+  }
 
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState(initTimeLeft());
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(initTimeLeft());
+    }, 1000);
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setTimeLeft(calculateTimeLeft());
-        }, 1000);
-        return () => clearInterval(timer);
-    }, [targetDate]);
+    return () => clearTimeout(timer);
+  }, [timeLeft]);
 
-    const timerComponents = Object.keys(timeLeft).map(interval => (
-        timeLeft[interval] ? (
-            <span key={interval}>
-                {timeLeft[interval]} {interval}{" "}
-            </span>
-        ) : null
-    ));
-
-    return (
-        <div className='flex flex-col justify-center text-center text-4xl font-bold'>
-            <p>Grab your Tickets now!!</p>
-            {timerComponents.length ? timerComponents : <span>Time's up!</span>}
-        </div>
-    );
-};
-
-export default Countdown;
+  return (
+    <div className="text-center w-full">
+      <p className="text-4xl mb-8 text-white-500 font-bold">Grab your Tickets now!!</p>
+      <div className="flex flex-wrap justify-center space-x-4 ">
+        <Count time="Days" count={timeLeft.days} />
+        <Count time="Hours" count={timeLeft.hours} />
+        <Count time="Minutes" count={timeLeft.minutes} />
+        <Count time="Seconds" count={timeLeft.seconds} />
+      </div>
+    </div>
+  );
+}

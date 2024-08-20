@@ -61,41 +61,43 @@ export const testimonials = [
 export const features = [
   {
     icon: <BotMessageSquare />,
-    text: "Drag-and-Drop Interface",
+    text: "AI Innovations Showcase",
     description:
-      "Easily design and arrange your VR environments with a user-friendly drag-and-drop interface.",
+      "Explore the latest advancements and breakthroughs in artificial intelligence through live demonstrations and presentations.",
   },
   {
     icon: <Fingerprint />,
-    text: "Multi-Platform Compatibility",
+    text: "Machine Learning Deep Dive",
     description:
-      "Build VR applications that run seamlessly across multiple platforms, including mobile, desktop, and VR headsets.",
+      "Participate in in-depth sessions focusing on advanced machine learning techniques and their applications across various industries.",
   },
   {
     icon: <ShieldHalf />,
-    text: "Built-in Templates",
+    text: "Data Science Trends",
     description:
-      "Jumpstart your VR projects with a variety of built-in templates for different types of applications and environments.",
+      "Discover emerging trends and best practices in data science, including new tools, methodologies, and case studies.",
   },
   {
     icon: <BatteryCharging />,
-    text: "Real-Time Preview",
+    text: "Ethics in AI and ML",
     description:
-      "Preview your VR application in real-time as you make changes, allowing for quick iterations and adjustments.",
+      "Engage in discussions about the ethical implications of AI and ML technologies and how to address challenges in responsible AI development.",
   },
   {
     icon: <PlugZap />,
-    text: "Collaboration Tools",
+    text: "AI Startups Pitch",
     description:
-      "Work together with your team in real-time on VR projects, enabling seamless collaboration and idea sharing.",
+      "Watch as innovative AI startups pitch their groundbreaking solutions and technologies to a panel of experts and investors.",
   },
   {
     icon: <GlobeLock />,
-    text: "Analytics Dashboard",
+    text: "Hands-On AI/ML Workshops",
     description:
-      "Gain valuable insights into user interactions and behavior within your VR applications with an integrated analytics dashboard.",
+      "Join interactive workshops designed to provide practical experience in building and deploying AI and ML models using popular frameworks and tools.",
   },
+  
 ];
+
 
 export const checklistItems = [
   {
