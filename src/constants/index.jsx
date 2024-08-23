@@ -124,36 +124,35 @@ export const checklistItems = [
 
 export const pricingOptions = [
   {
-    title: "Free",
+    title: "Basic",
     price: "$0",
     features: [
-      "Private board sharing",
-      "5 Gb Storage",
-      "Web Analytics",
-      "Private Mode",
+      "Keynote Access",
+      "AI/ML Kit",
+      "Networking",
+      
     ],
   },
   {
     title: "Pro",
-    price: "$10",
+    price: "$2",
     features: [
-      "Private board sharing",
-      "10 Gb Storage",
-      "Web Analytics (Advance)",
-      "Private Mode",
+      "All Sessions",
+      "Workshops",
+      "Priority Networking",
     ],
   },
   {
     title: "Enterprise",
-    price: "$200",
+    price: "$20",
     features: [
-      "Private board sharing",
-      "Unlimited Storage",
-      "High Performance Network",
-      "Private Mode",
+      "VIP Networking",
+      "1-on-1 with Experts",
+      "Session Recordings",
     ],
   },
 ];
+
 
 export const resourcesLinks = [
   { href: "#", text: "Getting Started" },
